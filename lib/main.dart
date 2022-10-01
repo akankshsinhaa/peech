@@ -83,38 +83,38 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.all(16),
-                child: TextButton(
-                  child: const Text(' '),
-                  onPressed: () => showDialog(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                      title: const Text('Speech'),
-                      content: Text(
-                        // If listening is active show the recognized words
-                        _speechToText.isListening
-                            ? '$_lastWords'
-                            // If listening isn't active but could be tell the user
-                            // how to start it, otherwise indicate that speech
-                            // recognition is not yet ready or not supported on
-                            // the target device
-                            : _speechEnabled
-                                ? 'Tap the microphone to start listening...'
-                                : 'Speech not available',
-                      ),
-                    ),
+//                 child: TextButton(
+//                   child: const Text(' '),
+//                   onPressed: () => showDialog(
+//                     context: context,
+//                     builder: (BuildContext context) => AlertDialog(
+//                       title: const Text('Speech'),
+//                       content: Text(
+//                         // If listening is active show the recognized words
+//                         _speechToText.isListening
+//                             ? '$_lastWords'
+//                             // If listening isn't active but could be tell the user
+//                             // how to start it, otherwise indicate that speech
+//                             // recognition is not yet ready or not supported on
+//                             // the target device
+//                             : _speechEnabled
+//                                 ? 'Tap the microphone to start listening...'
+//                                 : 'Speech not available',
+//                       ),
+//                     ),
+//                   ),
+                  child: Text(
+                    // If listening is active show the recognized words
+                    _speechToText.isListening
+                        ? '$_lastWords'
+                        // If listening isn't active but could be tell the user
+                        // how to start it, otherwise indicate that speech
+                        // recognition is not yet ready or not supported on
+                        // the target device
+                        : _speechEnabled
+                            ? 'Tap the microphone to start listening...'
+                            : 'Speech not available',
                   ),
-                  // child: Text(
-                  //   // If listening is active show the recognized words
-                  //   _speechToText.isListening
-                  //       ? '$_lastWords'
-                  //       // If listening isn't active but could be tell the user
-                  //       // how to start it, otherwise indicate that speech
-                  //       // recognition is not yet ready or not supported on
-                  //       // the target device
-                  //       : _speechEnabled
-                  //           ? 'Tap the microphone to start listening...'
-                  //           : 'Speech not available',
-                  // ),
                 ),
               ),
             ),
